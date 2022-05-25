@@ -1,5 +1,5 @@
 # RecipeDB-2.0
-Preprocessing of Ingredient Phrases
+# Preprocessing of Ingredient Phrases
 Convert to Lowercase and convert chilli(es) to chilli
 
 Removal of Stopwords
@@ -7,7 +7,7 @@ Removal of Stopwords
 Lemmatisation
 
 
-POS Tagging 
+# POS Tagging 
 We used 26 Tags (https://github.com/amishaagg/RecipeDB-2.0/blob/main/tags_meaning ) to tag each word in an ingredient phrase. 
 
 
@@ -15,13 +15,13 @@ We used 26 Tags (https://github.com/amishaagg/RecipeDB-2.0/blob/main/tags_meanin
 Next we made a vector of size 26 for each ingredient phrase storing the tag frequency. For example, a phrase like ‘2_CD cup_NN chickpea_NN flour_NN seived_VBD’ has a vector of the form [2,0,0,0,1,0,0,0,0,0,0,0,0,0..] where 2 denoted NN and 1 denoted VBD.
 
 
-K means Clustering. 
+# K means Clustering. 
 We use clustering to cluster the vectors of the ingredient phrases. This ensures that the ingredient phrases with similar linguistic structure are clustered together. We also plot the inertia corresponding to a fixed number of clusters. 
 We get a plot of inertia (The sum of squared distances of samples to their closest cluster center) vs number of clusters like this
 
 We find the optimum number of clusters using elbow method ( https://www.geeksforgeeks.org/elbow-method-for-optimal-value-of-k-in-kmeans/ ) and perform clustering for the optimum number of clusters. 
 
-Test train split for NER tagging
+# Test train split for NER tagging
 Next we split each cluster into training and testing samples, and make two excel files train and test.
 
 Next we manually annotate them, to perform NER tagging, The tags we used are as follows:
@@ -29,7 +29,7 @@ Next we manually annotate them, to perform NER tagging, The tags we used are as 
 
 
 
-Training our custom NER model 
+# Training our custom NER model 
 	We trained our own NER tagging model with NLTK and Stanford NER Tagger by
 following this article. https://www.sicara.fr/blog/2018-04-25-python-train-model-ntlk-stanford-ner-tagger
 
